@@ -1,19 +1,25 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+const salutation = "Salut c'ets foodjubi !!"
+import {ref} from 'vue'
+const compteur = ref(0)
+function augmenter(){
+  compteur.value++
+}
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
 
   <main>
-    <TheWelcome />
+    <h1>Gaubert Julien</h1>
+    <h2>Développeur en apprentissage</h2>
+    <h3>Bonjour je m'appelle Gazubert Julien je suis pationné de developpement informatique depuis l'age de 12 ans je suis autodidacte blablabla!</h3>
+    <a href="https://github.com/Foodjubi">GITHUB</a>
+    <p>{{ salutation }}</p>
+    <button @click="augmenter">Cliquer</button>
+    <p>Nombre de clics : {{compteur}}</p>
+    <p v-if="compteur > 0">Premier clic effectué !!</p>
   </main>
 </template>
 
