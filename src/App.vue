@@ -24,6 +24,26 @@ function augmenter(){
 </template>
 
 <style scoped>
+
+button{
+  background-color: var(--color-accent-dark);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+}
+
+button:hover {
+  background-color: #483724;
+}
+button:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
 header {
   line-height: 1.5;
 }
