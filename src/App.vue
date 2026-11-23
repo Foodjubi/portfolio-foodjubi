@@ -95,4 +95,6 @@ function reinitialiser(){
 
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>
