@@ -16,6 +16,9 @@
         <a href="#project" class="button button-primary">
           Découvrir mes projets
         </a>
+        <a class="button button-secondary" href="#contact">
+          Me contacter
+        </a>
         <a class="button button-secondary" href="https://github.com/Foodjubi" target="_blank" rel="noopener noreferrer">
           Voir mon GitHub
         </a>
