@@ -31,6 +31,15 @@ const projets = [
     category: "Python",
     status: "Ancien Projet",
     url: ""
+  },
+  {
+    if: 4,
+    title: "PortFolio Vue",
+    techno: "JavaScript / Vue.js 3",
+    description: "Mon portfolio codé graçe à vue.js",
+    category: "Javascript",
+    status: "En cours",
+    url: "https://github.com/Foodjubi/portfolio-foodjubi"
   }
 ]
 
@@ -62,7 +71,7 @@ function reinitialiser(){
     <main id="projets" class="content-panel">
       <p class="eyebrow">MES RÉALISATIONS</p>
       <h2>Mes projets personnels</h2>
-      <p>Queslques projets anciens et mon apprentissage actuel.</p>
+      <p>Quelques projets anciens et mon apprentissage actuel.</p>
 
       <ProjectFilters v-model:search="Rrcherche" v-model:category="categorieActive"/>
       <p class="result-count" aria-live="polite">{{ projectsFiltres.length }} projet(s) affiché(s)</p>
