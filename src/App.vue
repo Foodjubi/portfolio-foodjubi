@@ -1,25 +1,15 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-const salutation = "Salut c'ets foodjubi !!"
-import {ref} from 'vue'
-const compteur = ref(0)
-function augmenter(){
-  compteur.value++
-}
+import ProfilHeader from "@/components/ProfilHeader.vue";
+import ProjectCard from "@/components/ProjectCard.vue";
 </script>
 
 <template>
 
   <main>
-    <h1>Gaubert Julien</h1>
-    <h2>Développeur en apprentissage</h2>
-    <h3>Bonjour je m'appelle Gazubert Julien je suis pationné de developpement informatique depuis l'age de 12 ans je suis autodidacte blablabla!</h3>
-    <a href="https://github.com/Foodjubi">GITHUB</a>
-    <p>{{ salutation }}</p>
-    <button @click="augmenter">Cliquer</button>
-    <p>Nombre de clics : {{compteur}}</p>
-    <p v-if="compteur > 0">Premier clic effectué !!</p>
+ <profil-header></profil-header>
+    <ProjectCard title="MonPluginV2" description="Ancien plugin Minecraft : métiers, commandes, sauvegarde de données via JSON et YAML" techno="Java / Spigot"></ProjectCard>
+    <ProjectCard title="SecurityBot" description="Ancien bot Discord : commandes, administration, sauvegarde de données via JSON, RPG" techno="Python / Discord.py"></ProjectCard>
+    <ProjectCard title="Realms Of Eternity" description="Créeation en cour d'un mod Minecraft, objectif: créer un systeme rpg dans le jeu" techno="Java / NeoForge"></ProjectCard>
   </main>
 </template>
 
