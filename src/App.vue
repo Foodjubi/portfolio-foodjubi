@@ -4,10 +4,11 @@ import ProjectCard from "@/components/ProjectCard.vue";
 import {computed, ref} from "vue";
 import ProjectFilters from "@/components/ProjectFilters.vue";
 import ContactSection from "@/components/ContactSection.vue";
-
+import SiteNav from "@/components/SiteNav.vue"
+import SkillsSection from "@/components/SkillsSection.vue"
 const projets = [
   {
-    if: 1,
+    id: 1,
     title: "MonPluginV2",
     techno: "Java / Spigot",
     description: "Plugin Minecraft : métiers, commandes, économie, sauvegarde de données via JSON et YAML",
@@ -16,16 +17,16 @@ const projets = [
     url: "https://github.com/Foodjubi/MonPluginV2"
   },
   {
-    if: 2,
+    id: 2,
     title: "Realms Of Eternity",
     techno: "Java / NeoForge",
-    description: "Créeation en cour d'un mod Minecraft, objectif: créer un systeme rpg dans le jeu",
+    description: "Création en cours d'un mod Minecraft, objectif: créer un système RPG dans le jeu",
     category: "Java",
     status: "En cours",
     url: "https://github.com/Foodjubi/realms-of-eternity"
   },
   {
-    if: 3,
+    id: 3,
     title: "SecurityBot",
     techno: "Python / Discord.py",
     description: "Bot Discord : commandes, administration, sauvegarde de données via JSON, RPG",
@@ -34,11 +35,11 @@ const projets = [
     url: ""
   },
   {
-    if: 4,
-    title: "PortFolio Vue",
+    id: 4,
+    title: "Portfolio Vue",
     techno: "JavaScript / Vue.js 3",
-    description: "Mon portfolio codé graçe à vue.js",
-    category: "Javascript",
+    description: "Mon portfolio codé grâce à Vue.js",
+    category: "JavaScript",
     status: "En cours",
     url: "https://github.com/Foodjubi/portfolio-foodjubi"
   }
@@ -51,7 +52,7 @@ const annee = new Date().getFullYear()
 const projectsFiltres = computed(() => {
   return projets.filter((projet) => {
     const bonneCategorie = categorieActive.value === "Tous" || projet.category === categorieActive.value
-    const texte = `${projet.title} ${projet.techno} ${projet.description.toLowerCase()}`
+    const texte = `${projet.title} ${projet.techno} ${projet.description}`.toLowerCase()
     const bonneRecherche = texte.includes(
         recherche.value.trim().toLowerCase()
     )
@@ -67,7 +68,10 @@ function reinitialiser(){
 </script>
 
 <template>
-
+  
+<SiteNav />
+<SkillsSection />
+  
   <div class="portfolio-shell">
     <ProfilHeader></ProfilHeader>
     <main id="projets" class="content-panel">
@@ -75,7 +79,7 @@ function reinitialiser(){
       <h2>Mes projets personnels</h2>
       <p>Quelques projets anciens et mon apprentissage actuel.</p>
 
-      <ProjectFilters v-model:search="Recherche" v-model:category="categorieActive"/>
+      <ProjectFilters v-model:search="recherche" v-model:category="categorieActive"/>
       <p class="result-count" aria-live="polite">{{ projectsFiltres.length }} projet(s) affiché(s)</p>
 
       <section v-if="projectsFiltres.length > 0" class="projects-grid" aria-label="Projets">
