@@ -1,5 +1,5 @@
 
-name: Deploy portfolio to GitHub Pages
+name: Deploy portfolio
 
 on:
   push:
@@ -14,18 +14,14 @@ permissions:
 
 concurrency:
   group: github-pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
-      - name: Récupérer le dépôt
+      - name: Recuperer les fichiers
         uses: actions/checkout@v4
 
       - name: Installer Node.js
@@ -34,20 +30,29 @@ jobs:
           node-version: '22'
           cache: npm
 
-      - name: Configurer GitHub Pages
-        uses: actions/configure-pages@v5
-
-      - name: Installer les dépendances
+      - name: Installer les dependances
         run: npm ci
 
-      - name: Compiler le portfolio
+      - name: Compiler Vue
         run: npm run build
 
-      - name: Préparer les fichiers
+      - name: Configurer Pages
+        uses: actions/configure-pages@v5
+
+      - name: Envoyer les fichiers
         uses: actions/upload-pages-artifact@v4
         with:
-          path: dist
+          path: ./dist
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Publier le portfolio
         id: deployment
         uses: actions/deploy-pages@v4
