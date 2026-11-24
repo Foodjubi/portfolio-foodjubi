@@ -1,4 +1,6 @@
 <script setup>
+import {ref} from "vue";
+
 defineProps({
   title: {type: String, required: true},
   techno: {type: String, required: true},
@@ -6,6 +8,8 @@ defineProps({
   status : {type: String, default: "Ancien Projet"},
   url: {type: String, default: ""}
 })
+
+const favori = ref(false)
 </script>
 
 <template>
@@ -23,6 +27,10 @@ defineProps({
     <span v-else class="project-no-link">
       Archive personnelle
     </span>
+
+    <button type="button" class="favorite-button" :aria-pressed="favori" @click="favori = !favori">
+      {{favori ? "* Favori" : "☆ Ajouter aux favoris"}}
+    </button>
   </div>
 </article>
 </template>

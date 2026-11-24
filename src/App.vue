@@ -3,6 +3,7 @@ import ProfilHeader from "@/components/ProfilHeader.vue";
 import ProjectCard from "@/components/ProjectCard.vue";
 import {computed, ref} from "vue";
 import ProjectFilters from "@/components/ProjectFilters.vue";
+import ContactSection from "@/components/ContactSection.vue";
 
 const projets = [
   {
@@ -45,6 +46,7 @@ const projets = [
 
 const categorieActive = ref("Tous")
 const recherche = ref("")
+const annee = new Date().getFullYear()
 
 const projectsFiltres = computed(() => {
   return projets.filter((projet) => {
@@ -73,7 +75,7 @@ function reinitialiser(){
       <h2>Mes projets personnels</h2>
       <p>Quelques projets anciens et mon apprentissage actuel.</p>
 
-      <ProjectFilters v-model:search="Rrcherche" v-model:category="categorieActive"/>
+      <ProjectFilters v-model:search="Recherche" v-model:category="categorieActive"/>
       <p class="result-count" aria-live="polite">{{ projectsFiltres.length }} projet(s) affiché(s)</p>
 
       <section v-if="projectsFiltres.length > 0" class="projects-grid" aria-label="Projets">
@@ -88,8 +90,10 @@ function reinitialiser(){
       </div>
     </main>
 
+    <ContactSection></ContactSection>
+
     <footer class="site-footer">
-      Portfolio de Julien Gaubert . Apprentissage Vue 3
+      © {{ annee }} Julien Gaubert · Portfolio Vue 3
     </footer>
   </div>
 
