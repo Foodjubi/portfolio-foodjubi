@@ -28,7 +28,7 @@ async function copierEmail(){
       <a class="button button-primary" :href="`mailto:${email}`"> M'envoyer un e-mail </a>
       <button class="button button-secondary copy-button" type="button" @click="copierEmail">
         {{copieEffectuee ? 'Adresse copiée !' : 'Copier mon e-mail'}}
-      </button>/
+      </button>
     </div>
 
     <p class="contact-note" role="status" aria-live="polite">
