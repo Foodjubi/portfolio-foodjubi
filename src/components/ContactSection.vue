@@ -21,7 +21,7 @@ async function copierEmail(){
     <p class="eyebrow">TRAVAILLONS ENSEMBLE</p>
     <h2>Contact</h2>
     <p>
-      Je cherche un stage en développement inormatique et je suis aussi ouvert aux formations/CDI
+      Je cherche un stage en développement informatique. Et pour préparer la rentrée 2027 et l'avenir, formation et CDI
     </p>
 
     <div class="contact-action"`>
