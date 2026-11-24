@@ -7,7 +7,7 @@
     <p class="eyebrow">PORTFOLIO . Gaubert Julien</p>
     <h1>Julien Gaubert</h1>
     <h2 class="profile-subtitle">Développeur en apprentissage</h2>
-    <h3 class="profil-description">Passionné par l'informatique et la programmation depuis la classe de 5ᵉ, je suis animé par une grande curiosité et une véritable soif de connaissances. Ce qui me fascine dans le développement, c'est son évolution permanente et les possibilités infinies d'apprendre, de créer et de découvrir.
+    <h3 class="profil-description">Passionné par l'informatique et la programmation depuis l'âge de 12 ans, je suis animé par une grande curiosité et une véritable soif de connaissances. Ce qui me fascine dans le développement, c'est son évolution permanente et les possibilités infinies d'apprendre, de créer et de découvrir.
 
       Au fil des années, j'ai exploré plusieurs technologies, notamment Python avec la création de bots Discord (discord.py), ainsi que Java à travers le développement de plugins et de mods Minecraft.
 
