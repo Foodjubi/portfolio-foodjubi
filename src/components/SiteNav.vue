@@ -1,7 +1,7 @@
 <script setup>
 const liens = [
-  {nom: "Acceuil", cible: "#acceuil"},
-  {nom: "Compétences", cible: "#compétences"},
+  {nom: "Accueil", cible: "#accueil"},
+  {nom: "Compétences", cible: "#competences"},
   {nom: "Projets", cible: "#projets"},
   {nom: "Contact", cible: "#contact"}
 

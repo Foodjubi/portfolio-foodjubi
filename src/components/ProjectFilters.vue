@@ -10,7 +10,7 @@ const emit = defineEmits([
     "update:search"
 ])
 
-const categories = ["Tous", "Java", "Python", "Javascript"]
+const categories = ["Tous", "Java", "Python", "JavaScript"]
 
 function changerCategorie(category) {
   emit("update:category", category)
@@ -33,7 +33,7 @@ function changerRecherche(event){
 
     <label class="search-field" for="search">
       <span>Rechercher un projet</span>
-      <input type="search" :value="search" placeholder="Java, Python, bot , Minecraft" @input="changerRecherche" />
+      <input id="search" type="search" :value="search" placeholder="Java, Python, bot, Minecraft" @input="changerRecherche" />
     </label>
   </div>
 
