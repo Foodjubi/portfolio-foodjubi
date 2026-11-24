@@ -21,9 +21,9 @@ const favori = ref(false)
     <h3>{{title}}</h3>
     <p class="project-techno">{{techno}}</p>
     <p class="project-description">{{description}}</p>
-    <a v-if=url class="project-link" :href="url" target="_blank" rel="noopener noreferrer">
-      Voir le code sur github
-    </a>
+    <a v-if="url" class="project-link" :href="url" target="_blank" rel="noopener noreferrer">
+  Voir le code sur GitHub
+</a>
     <span v-else class="project-no-link">
       Archive personnelle
     </span>
