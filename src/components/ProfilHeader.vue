@@ -13,7 +13,7 @@
 
       Je recherche principalement un stage en développement informatique afin de découvrir le milieu professionnel, acquérir de l'expérience et progresser vers davantage d'autonomie. Je suis également intéressé par les formations permettant d'approfondir mes compétences.</h3>
       <div class="hero-actions">
-        <a href="#project" class="button button-primary">
+        <a href="#projects" class="button button-primary">
           Découvrir mes projets
         </a>
         <a class="button button-secondary" href="#contact">
