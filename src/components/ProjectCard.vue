@@ -21,7 +21,7 @@ const favori = ref(false)
     <h3>{{title}}</h3>
     <p class="project-techno">{{techno}}</p>
     <p class="project-description">{{description}}</p>
-    <a v-if="url" class="project-link" href="url" target="_blank" rel="noopener noreferrer">
+    <a v-if=url class="project-link" href=url target="_blank" rel="noopener noreferrer">
       Voir le code sur github
     </a>
     <span v-else class="project-no-link">
@@ -36,12 +36,4 @@ const favori = ref(false)
 </template>
 
 <style scoped>
-.project-card {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-@media (max-width: 760px) {
-  .project-card { grid-template-columns: 1fr; }
-}
 </style>
