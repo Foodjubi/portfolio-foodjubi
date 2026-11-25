@@ -1,24 +1,23 @@
 <script setup>
 const liens = [
-  {nom: "Accueil", cible: "#accueil"},
-  {nom: "Compétences", cible: "#competences"},
-  {nom: "Projets", cible: "#projets"},
-  {nom: "Contact", cible: "#contact"}
-
+  { nom: "Accueil", cible: "/#accueil" },
+  { nom: "Competences", cible: "/#competences" },
+  { nom: "Parcours", cible: "/#parcours" },
+  { nom: "Projets", cible: "/#projets" },
+  { nom: "Contact", cible: "/#contact" }
 ]
 </script>
-
 <template>
   <nav class="site-nav" aria-label="Navigation principale">
-    <a class="brand" href="#accuil">Julien</a>
-
+    <RouterLink class="brand" to="/#accueil">Julien</RouterLink>
     <div class="nav-links">
-      <a v-for="lien in liens" :key="lien.cible" :href="lien.cible">
-        {{lien.nom}}
-      </a>
+      <RouterLink v-for="lien in liens" :key="lien.cible" :to="lien.cible">
+        {{ lien.nom }}
+      </RouterLink>
     </div>
   </nav>
 </template>
+
 
 <style scoped>
 
