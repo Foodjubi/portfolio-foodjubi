@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#e8dfd1"/>
+  <rect x="75" y="75" width="1130" height="570" rx="36" fill="#f6f0e4" stroke="#b5a184" stroke-width="4"/>
+  <g fill="#907956">
+    <circle cx="410" cy="245" r="46"/>
+    <path d="M250 550 L490 300 L645 460 L815 270 L1040 550 Z"/>
+  </g>
+  <text x="640" y="610" text-anchor="middle" font-family="Arial" font-size="32" fill="#604b32">Capture a ajouter</text>
+</svg>
