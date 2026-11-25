@@ -5,7 +5,7 @@ import { useRoute } from "vue-router"
 import { projets } from "@/data/projects"
 
 const route = useRoute()
-const project = computed(() => projects.find((item) => item.slug === route.params.slug))
+const project = computed(() => projets.find((item) => item.slug === route.params.slug))
 
 const fallbackUrl = `${import.meta.env.BASE_URL}projects/placeholder.svg`
 const imageUrl = computed(() => project.value ? `${import.meta.env.BASE_URL}projects/${project.value.image}` : fallbackUrl)
@@ -26,12 +26,12 @@ function imageManquante(event){
     <main v-if="project" class="content-panel project-detail">
       <p class="eyebrow">FICHE PROJET</p>
       <span class="project-status">{{project.status}}</span>
-      <h1>{{Project.title}}</h1>
+      <h1>{{project.title}}</h1>
       <p class="detail-techno">{{project.techno}}</p>
 
       <img class="detail-image" :src="imageUrl" :alt="`Capture du projet ${project.title}`"/>
       <p class="detail-lead">{{project.description}}</p>
-      <h2>A propos du porjet</h2>
+      <h2>A propos du projet</h2>
       <p>{{project.details}}</p>
 
       <h2>Compétences et technologies utilisées</h2>
@@ -39,9 +39,9 @@ function imageManquante(event){
         <li v-for="skill in project.competences" :key="skill">{{skill}}</li>
       </ul>
 
-      <h2>Fonctionnalitées</h2>
+      <h2>Fonctionnalités</h2>
       <ul class="feature-list">
-        <li v-for="feature in project.fonctionnalitées" :key="feature">{{feature}}</li>
+        <li v-for="feature in project.fonctionnalites" :key="feature">{{feature}}</li>
       </ul>
 
       <a v-if="project.url" :href="project.url" target="_blank" rel="noopener noreferrer" class="button button-primary">

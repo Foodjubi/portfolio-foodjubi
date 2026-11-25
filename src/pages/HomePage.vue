@@ -36,7 +36,7 @@ function reinitialiser(){
   <div class="portfolio-shell">
     <SiteNav />
     <SkillsSection />
-
+    <TimelineSection />
     <div class="portfolio-shell">
       <ProfilHeader></ProfilHeader>
       <main id="projets" class="content-panel">
@@ -48,7 +48,11 @@ function reinitialiser(){
         <p class="result-count" aria-live="polite">{{ projectsFiltres.length }} projet(s) affiché(s)</p>
 
         <section v-if="projectsFiltres.length > 0" class="projects-grid" aria-label="Projets">
-          <ProjectCard v-for="project in projectsFiltres" :key="project.id" :title="project.title" :techno="project.techno" :description="project.description" :status="project.status" :url="project.url" />
+          <ProjectCard
+              v-for="project in projectsFiltres"
+              :key="project.id"
+              :project="project"
+          />
         </section>
 
         <div v-else class="empty-state">

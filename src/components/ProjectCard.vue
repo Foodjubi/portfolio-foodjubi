@@ -2,12 +2,12 @@
 import {ref} from "vue";
 import { computed} from "vue";
 
-defineProps({
+const props = defineProps({
   project: {type: Object, required: true},
 })
 
 const imageUrl = computed(() => {
-  `${import.meta.env.BASE_URL}projects/${props.project.image}`
+  return `${import.meta.env.BASE_URL}projects/${props.project.image}`
 })
 
 const fallbackUrl = `${import.meta.env.BASE_URL}projects/placeholder.svg`
@@ -22,7 +22,7 @@ const favori = ref(false)
 </script>
 
 <template>
-  <RouterLink :to="{name: 'projects', params: {slug: project.slug}}" :aria-label="`Découvrir le projet ${project.title}`">
+  <RouterLink :to="{ name: 'project-details', params: { slug: project.slug } }" :aria-label="`Découvrir le projet ${project.title}`">
     <article class="project-card v2-card">
       <img class="project-cover" :src="imageUrl" :alt="`Capture du projet ${project.title}`" loading="lazy" @error="imageManquante"/>
       <div class="project-card-body">
